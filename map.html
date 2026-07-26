@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Map</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <i class="fa-solid fa-location-dot"></i>
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<i class="fa-solid fa-user-shield"></i>
+
+<i class="fa-solid fa-map"></i>
+</head>
+<body>
+
+<header>
+    <div class="logo">Tourist Safety</div>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="login.html">Logout</a>
+    </nav>
+</header>
+
+<div class="dashboard">
+
+    <h1>📍 Live Tourist Map</h1>
+
+    <div class="status-card">
+
+<h2>Your Current Location</h2>
+
+<p>Latitude :
+<span id="latitude">Loading...</span></p>
+
+<p>Longitude :
+<span id="longitude">Loading...</span></p>
+
+<button onclick="getLocation()">
+Get Current Location
+</button>
+</div>
+
+    <div id="map"></div>
+   <div id="warningBox" class="status-card" style="display:none;">
+
+<h2>⚠️ High Risk Area</h2>
+
+<p>You have entered a dangerous zone.</p>
+
+<p>Nearest Police Station : 650 meters</p>
+
+<p>Nearest Hospital : 1.2 km</p>
+
+<p>Please move to a safer location.</p>
+
+<h3 id="countdown">30</h3>
+
+<button class="action-btn" onclick="cancelAlert()">
+I'm Safe
+</button>
+
+</div>
+
+    <div class="status-card">
+        <h2>🟢 Safe Zones</h2>
+        <ul>
+            <li>Botanical Garden</li>
+            <li>Government Museum</li>
+        </ul>
+    </div>
+
+    <div class="status-card">
+        <h2>🔴 High Risk Zones</h2>
+        <ul>
+            <li>Hill Forest Area</li>
+            <li>Restricted Valley</li>
+        </ul>
+    </div>
+
+</div>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+
+var map = L.map('map').setView([11.0168,76.9558],13);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    attribution:'© OpenStreetMap'
+}).addTo(map);
+
+L.marker([11.0168,76.9558]).addTo(map)
+.bindPopup("Tourist Location")
+.openPopup();
+var dangerZone = L.circle([11.0168,76.9558],{
+
+    color:'red',
+
+    fillColor:'red',
+
+    fillOpacity:0.3,
+
+    radius:500
+
+}).addTo(map);
+
+dangerZone.bindPopup("High Risk Zone");
+
+</script>
+<script src="js/gps.js"></script>
+</body>
+</html>

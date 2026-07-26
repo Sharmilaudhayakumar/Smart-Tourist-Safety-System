@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS Emergency</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <i class="fa-solid fa-location-dot"></i>
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<i class="fa-solid fa-user-shield"></i>
+
+<i class="fa-solid fa-map"></i>
+</head>
+<body>
+
+<header>
+    <div class="logo">Tourist Safety</div>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="login.html">Logout</a>
+    </nav>
+</header>
+
+<div class="dashboard">
+
+    <h1>🚨 Emergency SOS</h1>
+
+    <div class="status-card">
+
+        <h2>Need Immediate Help?</h2>
+
+        <p>
+            Press the SOS button to notify emergency services.
+        </p>
+
+        <button class="sos-btn" onclick="sendSOS()">
+            🚨 SEND SOS
+        </button>
+
+    </div>
+
+    <div id="result" class="status-card" style="display:none;">
+
+        <h2>Emergency Alert Sent Successfully!</h2>
+
+        <p>📍 Live Location Shared</p>
+
+        <p>👮 Police Notified</p>
+
+        <p>👨‍👩‍👧 Emergency Contact Notified</p>
+
+        <p>🚑 Ambulance Alert Generated</p>
+
+    </div>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

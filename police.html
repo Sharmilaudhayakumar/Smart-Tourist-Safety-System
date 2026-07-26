@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Police Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <i class="fa-solid fa-location-dot"></i>
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<i class="fa-solid fa-user-shield"></i>
+
+<i class="fa-solid fa-map"></i>
+</head>
+<body>
+
+<header>
+
+    <div class="logo">Police Dashboard</div>
+
+    <nav>
+        <a href="dashboard.html">Tourist Dashboard</a>
+        <a href="login.html">Logout</a>
+    </nav>
+
+</header>
+
+<div class="dashboard">
+
+    <h1>🚨 Emergency Control Center</h1>
+
+    <div class="status-card">
+
+<h2>🚨 Active Emergency</h2>
+
+<p><strong>Tourist:</strong>
+<span id="touristName">No Emergency</span></p>
+
+<p><strong>Location:</strong>
+<span id="touristLocation">-</span></p>
+
+<p><strong>Status:</strong>
+<span id="touristStatus">Safe</span></p>
+
+</div>
+
+    <div class="status-card">
+        <h2>Actions</h2>
+
+        <button class="action-btn">🚔 Dispatch Police</button>
+
+        <button class="action-btn">🚑 Call Ambulance</button>
+
+        <button class="action-btn">📞 Contact Tourist</button>
+
+        <button class="action-btn">✅ Mark as Resolved</button>
+    </div>
+
+    <div class="status-card">
+        <h2>Incident Timeline</h2>
+
+        <p>10:30 AM - SOS Received</p>
+        <p>10:31 AM - Location Verified</p>
+        <p>10:32 AM - Police Assigned</p>
+    </div>
+
+</div>
+<script>
+
+if(localStorage.getItem("emergency")=="YES"){
+
+document.getElementById("touristName").innerHTML=
+localStorage.getItem("touristName");
+
+document.getElementById("touristLocation").innerHTML=
+localStorage.getItem("location");
+
+document.getElementById("touristStatus").innerHTML=
+localStorage.getItem("status");
+
+}
+
+</script>
+</body>
+</html>

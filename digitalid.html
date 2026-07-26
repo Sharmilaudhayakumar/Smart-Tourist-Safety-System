@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital ID</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <i class="fa-solid fa-location-dot"></i>
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<i class="fa-solid fa-user-shield"></i>
+
+<i class="fa-solid fa-map"></i>
+</head>
+<body>
+
+<header>
+
+    <div class="logo">Tourist Safety</div>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="login.html">Logout</a>
+    </nav>
+
+</header>
+
+<div class="dashboard">
+
+    <h1>🪪 Tourist Digital ID</h1>
+
+    <div class="status-card">
+
+        <h2>Personal Information</h2>
+
+     <p><strong>Name:</strong> <span id="digitalName"></span></p>
+
+        <p><strong>Nationality:</strong> India</p>
+
+        <p><strong>Passport No:</strong> P12345678</p>
+
+        <p><strong>Blood Group:</strong> O+</p>
+
+        <p><strong>Emergency Contact:</strong> +91 9876543210</p>
+
+        <p><strong>ID Status:</strong> ✅ Verified</p>
+
+    </div>
+
+   <div class="status-card">
+
+    <h2>🔗 Blockchain Verification</h2>
+
+    <p><strong>Status:</strong> ✅ Verified</p>
+
+    <p><strong>Hash ID:</strong></p>
+
+    <p id="hashId">0x8F4A9C2D6B91A4F2</p>
+
+    <p><strong>Verification Time:</strong></p>
+
+    <p id="verifyTime"></p>
+
+    <button class="action-btn" onclick="verifyIdentity()">
+        Verify Identity
+    </button>
+
+</div>
+</div>
+<script>
+
+document.getElementById("digitalName").innerHTML =
+localStorage.getItem("touristName");
+
+</script>
+</body>
+</html>

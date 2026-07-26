@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <i class="fa-solid fa-location-dot"></i>
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<i class="fa-solid fa-user-shield"></i>
+
+<i class="fa-solid fa-map"></i>
+</head>
+<body>
+
+<header>
+
+    <div class="logo">Tourist Safety</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="login.html">Logout</a>
+    </nav>
+
+</header>
+
+<div class="dashboard">
+<h1>Welcome, <span id="username"></span> 👋</h1>
+
+    <div class="status-card">
+        <h2>🟢 Safety Status</h2>
+        <p>You are currently SAFE</p>
+    </div>
+
+    <div class="status-card">
+        <h2>📍 Current Location</h2>
+        <p>Ooty Botanical Garden</p>
+    </div>
+
+    <div class="status-card">
+        <h2>⭐ Safety Score</h2>
+        <p>95 / 100</p>
+    </div>
+
+    <div class="button-grid">
+
+        <a href="map.html" class="dashboard-btn">
+            🗺️ View Map
+        </a>
+
+        <a href="digitalid.html" class="dashboard-btn">
+            🪪 Digital ID
+        </a>
+
+        <a href="sos.html" class="dashboard-btn">
+            🚨 SOS
+        </a>
+
+        <a href="police.html" class="dashboard-btn">
+            👮 Police Dashboard
+        </a>
+        <a href="ai.html" class="dashboard-btn">
+    🤖 AI Monitoring
+        </a>
+
+
+    </div>
+
+</div>
+<script>
+
+document.getElementById("username").innerHTML =
+localStorage.getItem("touristName");
+
+</script>
+</body>
+</html>
